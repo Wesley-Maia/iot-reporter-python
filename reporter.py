@@ -6,11 +6,14 @@ Created on Sat Apr 16 11:36:36 2022
 """
 
 from fpdf import FPDF
-from analyzer import extract_temperature
+import analyzer 
 
 
 def report_pdf():
-    extract_temperature()
+    
+    analyzer.extract_temperature()
+    analyzer.extract_current()
+    analyzer.extract_rssi()
     
     pdf = FPDF('P', 'mm', 'A4')
     pdf.add_page()
